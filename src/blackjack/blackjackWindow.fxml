@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #423F3F;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="blackjack.blackjackController">
+   <top>
+      <VBox prefHeight="84.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="Игры">
+                  <items>
+                    <MenuItem fx:id="oddorevenMenuItem" mnemonicParsing="false" onAction="#oddorevenMenuItemAction" text="Четное/Нечетное" />
+                        <MenuItem fx:id="guessnumberMenuItem" mnemonicParsing="false" onAction="#guessnumberMenuItemAction" text="Угадай число" />
+                        <MenuItem fx:id="guesswhereMenuItem" mnemonicParsing="false" onAction="#guesswhereMenuItemAction" text="Угадай где" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Новая игра">
+                    <items>
+                      <MenuItem fx:id="againMenuItem" mnemonicParsing="false" onAction="#againMenuItemAction" text="Заново" />
+                    </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Помощь">
+                  <items>
+                    <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" onAction="#aboutMenuItemAction" text="О нас" />
+                  </items>
+                </Menu>
+              </menus>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </MenuBar>
+            <HBox prefHeight="91.0" prefWidth="600.0" spacing="50.0">
+               <children>
+                  <Label text="Диллер" textFill="#00ecff">
+                     <HBox.margin>
+                        <Insets left="100.0" top="30.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Verdana Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="dillerScore" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="34.0" text="0" textFill="#e41717">
+                     <HBox.margin>
+                        <Insets top="30.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Verdana Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="59.0" prefWidth="3.0" style="-fx-background-color: black;" />
+                  <Label fx:id="playerScore" prefHeight="25.0" prefWidth="41.0" text="0" textFill="#e41717">
+                     <HBox.margin>
+                        <Insets top="30.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Verdana Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label text="Вы" textFill="#00ecff">
+                     <HBox.margin>
+                        <Insets top="30.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Verdana Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <left>
+      <Button fx:id="startButton" alignment="CENTER" mnemonicParsing="false" onAction="#startButtonAction" prefHeight="233.0" prefWidth="134.0" style="-fx-background-color: #00ff2e;" text="Поехали!" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="10.0" right="10.0" />
+         </BorderPane.margin>
+         <font>
+            <Font name="Verdana Bold" size="18.0" />
+         </font>
+      </Button>
+   </left>
+   <center>
+      <VBox prefHeight="316.0" prefWidth="347.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="gamesCount" text="Игра номер: 1 " textFill="#e5ff00">
+                     <font>
+                        <Font name="Verdana Bold" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="85.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="446.0">
+               <children>
+                  <Label text="Диллер:" textFill="#00ecff">
+                     <font>
+                        <Font name="Verdana Bold" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="85.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="dillerCount" layoutX="10.0" layoutY="10.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Вы:" textFill="#00ecff">
+                     <font>
+                        <Font name="Verdana Bold" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="138.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="playerCount" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="stopButton" disable="true" mnemonicParsing="false" onAction="#stopButtonAction" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: red;" text="Стоп" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="75.0" top="18.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Verdana Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hitButton" disable="true" mnemonicParsing="false" onAction="#hitButtonAction" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #55ea73;" text="Еще">
+                     <HBox.margin>
+                        <Insets left="10.0" top="18.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Verdana Bold" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

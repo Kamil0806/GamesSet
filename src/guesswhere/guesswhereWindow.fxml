@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #423F3F;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guesswhere.guesswhereController">
+   <top>
+      <VBox alignment="TOP_CENTER" prefHeight="186.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="Игры">
+                  <items>
+                    <MenuItem fx:id="oddorevenMenuItem" mnemonicParsing="false" onAction="#oddorevenMenuItemAction" text="Четное/Нечетное" />
+                        <MenuItem fx:id="guessnumberMenuItem" mnemonicParsing="false" onAction="#guessnumberMenuItemAction" text="Угадай число" />
+                        <MenuItem fx:id="blackjackMenuItem" mnemonicParsing="false" onAction="#blackjackMenuItemAction" text="Blackjack" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Помощь">
+                  <items>
+                    <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" onAction="#aboutMenuItemAction" text="О нас" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Region prefHeight="98.0" prefWidth="600.0" />
+            <Label fx:id="labelText" onMouseClicked="#labelTextClicked" text="Угадай где?" textFill="#e41717">
+               <font>
+                  <Font name="Verdana Bold" size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <HBox alignment="TOP_CENTER" prefHeight="133.0" prefWidth="600.0" spacing="25.0" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <Button fx:id="firstButton" mnemonicParsing="false" onAction="#firstButtonAction" prefHeight="97.0" prefWidth="115.0" text="?">
+               <font>
+                  <Font name="Verdana Bold" size="28.0" />
+               </font>
+            </Button>
+            <Button fx:id="secondButton" mnemonicParsing="false" onAction="#secondButtonAction" prefHeight="97.0" prefWidth="106.0" text="?">
+               <font>
+                  <Font name="Verdana Bold" size="28.0" />
+               </font>
+            </Button>
+            <Button fx:id="thirdButton" mnemonicParsing="false" onAction="#thirdButtonAction" prefHeight="98.0" prefWidth="107.0" text="?">
+               <font>
+                  <Font name="Verdana Bold" size="28.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>
